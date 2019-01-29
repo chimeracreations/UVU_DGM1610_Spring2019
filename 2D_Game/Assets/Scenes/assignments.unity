@@ -4829,13 +4829,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 456580272}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.3, y: -0.26, z: 0.04}
-  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0.7070853, y: 0.0055155167, z: -0.0055155167, w: 0.7070853}
+  m_LocalPosition: {x: -0.021011997, y: -0.022908607, z: 0.062169313}
+  m_LocalScale: {x: 0.12907557, y: 0.6453781, z: 0.064537816}
+  m_Children: []
+  m_Father: {fileID: 888927811}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &634962363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634962365}
+  - component: {fileID: 634962364}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &634962364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634962363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d93a4b901247a48a872c8f4bc92bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+  speed: 0
+  name: 
+--- !u!4 &634962365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634962363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808031529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +4965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888927811}
   - component: {fileID: 888927810}
+  - component: {fileID: 888927812}
   m_Layer: 0
   m_Name: My First Sprite
   m_TagString: Untagged
@@ -4984,10 +5028,25 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.0078001185, w: 0.99996966}
   m_LocalPosition: {x: -3.14, y: -0.08, z: -0.008165054}
   m_LocalScale: {x: 7.7474, y: 7.7474, z: 0.77474}
-  m_Children: []
+  m_Children:
+  - {fileID: 456580275}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.89400005}
+--- !u!114 &888927812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888927809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d93a4b901247a48a872c8f4bc92bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+  speed: 0
+  name: 
 --- !u!1 &1081530228
 GameObject:
   m_ObjectHideFlags: 0
