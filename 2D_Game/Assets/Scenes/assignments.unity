@@ -4844,8 +4844,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634962365}
-  - component: {fileID: 634962364}
-  - component: {fileID: 634962366}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4853,20 +4851,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &634962364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 634962363}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73d93a4b901247a48a872c8f4bc92bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 0
-  speed: 0
-  name: 
 --- !u!4 &634962365
 Transform:
   m_ObjectHideFlags: 0
@@ -4880,18 +4864,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &634962366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 634962363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efac34cca0267a646b24949f8555cdfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weatherName: Foggy
 --- !u!1 &808031529
 GameObject:
   m_ObjectHideFlags: 0
