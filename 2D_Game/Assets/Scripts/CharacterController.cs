@@ -23,17 +23,6 @@ public class CharacterController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		// move the character right when pressing D or Right Arrow
-		if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))	
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
-		}
-		// move the character left if pressing the A or left arrow
-		else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))	
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
-		}
-		
 		// character jump and double jump code.
 		if(Input.GetKeyDown(KeyCode.W) && ((isGrounded == true) || (hasJumped == true)))
 		{
@@ -52,5 +41,23 @@ public class CharacterController : MonoBehaviour {
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
+
+
+		// if pressing both, do nothing
+		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))
+		{
+			return;
+		}
+		// move the character right when pressing D or Right Arrow
+		else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))	
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+		}
+		// move the character left if pressing the A or left arrow
+		else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))	
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+		}
+		
 	}
 }
