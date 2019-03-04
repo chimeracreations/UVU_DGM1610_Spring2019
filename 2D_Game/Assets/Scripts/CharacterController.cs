@@ -16,16 +16,15 @@ public class CharacterController : MonoBehaviour {
 	Animator animationSpeed;
 
 	// Player grounded variables
-	private bool isGrounded;
-	private bool hasJumped;
+	private bool isGrounded = false;
+	private bool hasJumped = false;
+	public Transform groundCheck;
+	private float groundRadius = 0.2f;
+	public LayerMask isGround;
 
 	// Use this for initialization
 	void Start () 
 	{
-		// starts bool variables for jumping
-		isGrounded = true;
-		hasJumped = false;
-
 		// Speed variable for animations
 		animationSpeed = GetComponent<Animator>();
 	}
@@ -33,25 +32,27 @@ public class CharacterController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		// character jump and double jump code.
-		if(Input.GetKeyDown(KeyCode.W) && ((isGrounded == true) || (hasJumped == true)))
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-			if (hasJumped == true)
-			{
-				hasJumped = false;
-			}
-			else hasJumped = true;
-		}
-		else if(Input.GetKeyDown(KeyCode.Space))
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-		}
-		else if(Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-		}
+		// check to see if on the ground
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+		animationSpeed.SetBool ("Ground", isGrounded);
 
+		if(isGrounded)
+			hasJumped = false;
+
+		// falling animation cues
+		animationSpeed.SetFloat ("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+
+		// character jump and double jump code.
+		if((isGrounded || !hasJumped) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+			animationSpeed.SetBool("Ground", false);
+
+			if(!hasJumped && !isGrounded)
+				hasJumped = true;
+			
+		}
+		
 
 		// if pressing both, do nothing
 		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))

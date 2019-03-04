@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 66629128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 247502297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: back pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5355,7 +5355,7 @@ GameObject:
   - component: {fileID: 625231232}
   - component: {fileID: 625231229}
   - component: {fileID: 625231231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SnowBurr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5447,6 +5447,7 @@ Transform:
   m_LocalPosition: {x: -3.57, y: -0.75, z: 0}
   m_LocalScale: {x: 0.645, y: 0.61, z: 1}
   m_Children:
+  - {fileID: 1097945276}
   - {fileID: 1290579632}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -5483,6 +5484,10 @@ MonoBehaviour:
   moveSpeed: 4
   jumpHeight: 6
   movementOffset: 2
+  groundCheck: {fileID: 1097945276}
+  isGround:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!58 &625231229
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6117,6 +6122,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1081530228}
   m_CullTransparentMesh: 0
+--- !u!1 &1097945275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097945276}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097945276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097945275}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.86, y: -2.3, z: 0.026577031}
+  m_LocalScale: {x: 5.0261626, y: 1.6393442, z: 1}
+  m_Children: []
+  m_Father: {fileID: 625231226}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1108295866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714012351823012, guid: ad8c36c543f24de41882f466fd5c5cfc,
@@ -6130,7 +6163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114144456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: back hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6159,7 +6192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1122734618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6193,7 +6226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1166575954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: back ski
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6221,7 +6254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217303129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front ski
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6249,7 +6282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217376714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6284,7 +6317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1238133641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6323,7 +6356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290579632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6349,7 +6382,7 @@ Transform:
   - {fileID: 1122734618}
   - {fileID: 2118898651}
   m_Father: {fileID: 625231226}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1319492696 stripped
 Transform:
@@ -6838,7 +6871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1689642704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6866,7 +6899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758645546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: back boot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6895,7 +6928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765389417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front boot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7018,7 +7051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010945549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7051,7 +7084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057845249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7064,13 +7097,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057845248}
-  m_LocalRotation: {x: 0, y: 0, z: -0.6387444, w: 0.769419}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6404388, w: 0.7680092}
   m_LocalPosition: {x: 0.5290884, y: 0.7455632, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238133641}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -79.649}
 --- !u!4 &2074957779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4245498432282190, guid: ad8c36c543f24de41882f466fd5c5cfc,
@@ -7084,7 +7117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089407407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scarf tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7112,7 +7145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118898651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
