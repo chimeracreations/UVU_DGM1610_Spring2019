@@ -5482,6 +5482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   jumpHeight: 6
+  movementOffset: 2
 --- !u!58 &625231229
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7125,7 +7126,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118898650}
   m_LocalRotation: {x: 0, y: 0, z: 0.5251361, w: 0.8510184}
-  m_LocalPosition: {x: 1.4763443, y: 1.0992552, z: 0}
+  m_LocalPosition: {x: 1.476344, y: 1.099255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1290579632}
