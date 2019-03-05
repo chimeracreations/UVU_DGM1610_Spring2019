@@ -19,8 +19,8 @@ public class CharacterController : MonoBehaviour {
 	private bool isGrounded = false;
 	private bool hasJumped = false;
 	public Transform groundCheck;
-	private float groundRadius = 0.2f;
-	public LayerMask isGround;
+	public float groundRadius = 0.2f;
+	public LayerMask whatIsGround;
 
 	// Use this for initialization
 	void Start () 
@@ -29,11 +29,19 @@ public class CharacterController : MonoBehaviour {
 		animationSpeed = GetComponent<Animator>();
 	}
 	
+
+	// fixed update is called before update
+	void FixedUpate ()
+	{
+
+	}
+
+
 	// Update is called once per frame
 	void Update () 
 	{
 		// check to see if on the ground
-		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		animationSpeed.SetBool ("Ground", isGrounded);
 
 		if(isGrounded)
@@ -41,6 +49,7 @@ public class CharacterController : MonoBehaviour {
 
 		// falling animation cues
 		animationSpeed.SetFloat ("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+
 
 		// character jump and double jump code.
 		if((isGrounded || !hasJumped) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
@@ -53,7 +62,6 @@ public class CharacterController : MonoBehaviour {
 			
 		}
 		
-
 		// if pressing both, do nothing
 		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))
 		{
@@ -70,6 +78,7 @@ public class CharacterController : MonoBehaviour {
 				FlipCharacter ();
 			}
 		}
+
 		// move the character left if pressing the A or left arrow
 		else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))	
 		{
