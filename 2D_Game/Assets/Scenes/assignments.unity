@@ -5313,7 +5313,6 @@ GameObject:
   - component: {fileID: 625231230}
   - component: {fileID: 625231232}
   - component: {fileID: 625231229}
-  - component: {fileID: 625231231}
   m_Layer: 8
   m_Name: SnowBurr
   m_TagString: Untagged
@@ -5403,7 +5402,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 625231223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.57, y: -0.75, z: 0}
+  m_LocalPosition: {x: -3.57, y: -1.37, z: 0}
   m_LocalScale: {x: 0.645, y: 0.61, z: 1}
   m_Children:
   - {fileID: 1097945276}
@@ -5422,7 +5421,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: efa863cd8b7afff45acb3954f0027115, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -5483,24 +5482,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1818360609 &625231231
-RotationConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 625231223}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 699532021}
-    weight: 1
 --- !u!58 &625231232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6106,7 +6087,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097945275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.86, y: -2.3, z: 0.026577031}
+  m_LocalPosition: {x: -1.86, y: -2.316, z: 0.026577031}
   m_LocalScale: {x: 5.0261626, y: 1.6393442, z: 1}
   m_Children: []
   m_Father: {fileID: 625231226}
