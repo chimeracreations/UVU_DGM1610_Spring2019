@@ -12,6 +12,7 @@ public class SnowflakePickup : MonoBehaviour {
 		{
 			print("You've collected the coin!");
 
+			ScoreManager.AddPoints(snowValue);
 			Destroy(gameObject);
 		}
 	}
