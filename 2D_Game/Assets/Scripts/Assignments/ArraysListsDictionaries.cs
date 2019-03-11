@@ -14,7 +14,7 @@ public class ArraysListsDictionaries : MonoBehaviour {
 	// Array Example
 	public string[] clientList = new string[]{"Greg", "Kate", "Adam", "Mia", "Fred"};
 
-, 	// List Example
+ 	// List Example
 	public List<string> santasNaughtyList = new List<string>();
 
 	// ArrayList Example
