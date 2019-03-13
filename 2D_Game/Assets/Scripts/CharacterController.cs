@@ -6,7 +6,11 @@ public class CharacterController : MonoBehaviour {
 
 	
 	// Player movement variables
-	public float moveSpeed;
+	private float moveSpeed;
+	public float setSpeed;
+	public float maxSpeed;
+	public float setAcceleration;
+	private float moveAcceleration;
 	public float jumpHeight;
 	bool faceRight = true;
 	private float speedVelocity;
@@ -27,6 +31,9 @@ public class CharacterController : MonoBehaviour {
 	{
 		// Speed variable for animations
 		animationSpeed = GetComponent<Animator>();
+		// initialize movement variables
+		moveAcceleration = setAcceleration;
+		moveSpeed = setSpeed;
 	}
 	
 
@@ -52,6 +59,7 @@ public class CharacterController : MonoBehaviour {
 
 
 		// character jump and double jump code.
+		// need to fix code to use physics object code for grounded
 		if((isGrounded || !hasJumped) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
@@ -65,11 +73,17 @@ public class CharacterController : MonoBehaviour {
 		// if pressing both, do nothing
 		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))
 		{
+			moveSpeed = setSpeed;
 			return;
 		}
+
 		// move the character right when pressing D or Right Arrow
+		// play with addforce tomorrow
 		else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))	
-		{
+		{	
+			moveSpeed += Time.deltaTime * moveAcceleration;
+			if (moveSpeed >= maxSpeed)
+				moveSpeed = maxSpeed;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
 
 			if(faceRight == true);
@@ -82,6 +96,10 @@ public class CharacterController : MonoBehaviour {
 		// move the character left if pressing the A or left arrow
 		else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))	
 		{
+			moveSpeed += Time.deltaTime * moveAcceleration;
+			if (moveSpeed >= maxSpeed)
+				moveSpeed = maxSpeed;
+
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
 
 			if(faceRight == false);
@@ -89,8 +107,10 @@ public class CharacterController : MonoBehaviour {
 			{
 				FlipCharacter ();
 			}
-
 		}
+
+		else moveSpeed = setSpeed;
+
 		// Animation speed call
 			speedVelocity = Input.GetAxis ("Horizontal");
 			animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));

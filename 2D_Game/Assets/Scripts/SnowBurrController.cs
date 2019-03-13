@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPlatformerController : PhysicsObjects {
+public class SnowBurrController : PhysicsObjects {
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;

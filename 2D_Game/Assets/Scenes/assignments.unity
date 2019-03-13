@@ -5235,6 +5235,7 @@ GameObject:
   - component: {fileID: 625231225}
   - component: {fileID: 625231227}
   - component: {fileID: 625231224}
+  - component: {fileID: 625231231}
   - component: {fileID: 625231228}
   - component: {fileID: 625231230}
   - component: {fileID: 625231232}
@@ -5365,7 +5366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a964d9e770363e241a0d709004da02a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  setSpeed: 2
+  maxSpeed: 6
+  setAcceleration: 3
   jumpHeight: 6
   movementOffset: 2
   groundCheck: {fileID: 1097945276}
@@ -5408,6 +5411,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &625231231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625231223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb702f5ba4ab334f9c33f1e91f9bdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 1
 --- !u!58 &625231232
 CircleCollider2D:
   m_ObjectHideFlags: 0
