@@ -5369,7 +5369,7 @@ MonoBehaviour:
   setSpeed: 2
   maxSpeed: 6
   setAcceleration: 3
-  jumpHeight: 6
+  jumpHeight: 7
   movementOffset: 2
   groundCheck: {fileID: 1097945276}
   groundRadius: 0.2
@@ -5423,7 +5423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 1
+  gravityModifier: 0
 --- !u!58 &625231232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5601,7 +5601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &888927810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5818,7 +5818,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7165,7 +7165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2133856607
 RectTransform:
   m_ObjectHideFlags: 0
