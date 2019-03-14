@@ -7,7 +7,6 @@ public class CharacterController : MonoBehaviour {
 	
 	// Player movement variables
 	private float moveSpeed;
-	public float setSpeed;
 	public float maxSpeed;
 	public float setAcceleration;
 	private float moveAcceleration;
@@ -23,8 +22,11 @@ public class CharacterController : MonoBehaviour {
 	private bool isGrounded = false;
 	private bool hasJumped = false;
 	public Transform groundCheck;
+	public Transform groundCheck2;
+	public Transform groundCheck3;
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
+	
 
 	// Use this for initialization
 	void Start () 
@@ -33,7 +35,7 @@ public class CharacterController : MonoBehaviour {
 		animationSpeed = GetComponent<Animator>();
 		// initialize movement variables
 		moveAcceleration = setAcceleration;
-		moveSpeed = setSpeed;
+		
 	}
 	
 
@@ -48,7 +50,11 @@ public class CharacterController : MonoBehaviour {
 	void Update () 
 	{
 		// check to see if on the ground
-		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+		if((Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround)) || (Physics2D.OverlapCircle(groundCheck2.position, groundRadius, whatIsGround)) 
+			|| (Physics2D.OverlapCircle(groundCheck3.position, groundRadius, whatIsGround)))
+				isGrounded = true;
+		else isGrounded = false;
+
 		animationSpeed.SetBool ("Ground", isGrounded);
 
 		if(isGrounded)
@@ -59,7 +65,6 @@ public class CharacterController : MonoBehaviour {
 
 
 		// character jump and double jump code.
-		// need to fix code to use physics object code for grounded
 		if((isGrounded || !hasJumped) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
@@ -73,15 +78,15 @@ public class CharacterController : MonoBehaviour {
 		// if pressing both, do nothing
 		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))
 		{
-			moveSpeed = setSpeed;
 			return;
 		}
 
 		// move the character right when pressing D or Right Arrow
-		// play with addforce tomorrow
 		else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))	
 		{	
-			moveSpeed += Time.deltaTime * moveAcceleration;
+			if (moveSpeed <= GetComponent<Rigidbody2D>().velocity.x)
+				moveSpeed = GetComponent<Rigidbody2D>().velocity.x;
+			moveSpeed += moveAcceleration;
 			if (moveSpeed >= maxSpeed)
 				moveSpeed = maxSpeed;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
@@ -96,11 +101,13 @@ public class CharacterController : MonoBehaviour {
 		// move the character left if pressing the A or left arrow
 		else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))	
 		{
-			moveSpeed += Time.deltaTime * moveAcceleration;
-			if (moveSpeed >= maxSpeed)
-				moveSpeed = maxSpeed;
+			if (moveSpeed >= GetComponent<Rigidbody2D>().velocity.x)
+				moveSpeed = GetComponent<Rigidbody2D>().velocity.x;
+			moveSpeed = moveSpeed - moveAcceleration;
+			if (moveSpeed <= -maxSpeed)
+				moveSpeed = -maxSpeed;
 
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed,GetComponent<Rigidbody2D>().velocity.y);
 
 			if(faceRight == false);
 			else
@@ -108,8 +115,6 @@ public class CharacterController : MonoBehaviour {
 				FlipCharacter ();
 			}
 		}
-
-		else moveSpeed = setSpeed;
 
 		// Animation speed call
 			speedVelocity = Input.GetAxis ("Horizontal");
@@ -132,5 +137,5 @@ public class CharacterController : MonoBehaviour {
 				transform.position = new Vector2 ((GetComponent<Rigidbody2D>().position.x - movementOffset),GetComponent<Rigidbody2D>().position.y);
 			}
 		}
-	
+
 }
