@@ -18,6 +18,7 @@ public class SnowBurrController : MonoBehaviour {
 	public Transform groundCheck3;
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
+    private float speedVelocity;
 
 
     private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
@@ -97,6 +98,10 @@ public class SnowBurrController : MonoBehaviour {
         {
             rb2d.AddForce (-movementLeft * force);
         }
+
+        speedVelocity = Input.GetAxis ("Horizontal");
+			animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));
+
     }
 
     void Update ()
