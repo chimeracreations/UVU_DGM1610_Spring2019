@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShadowDrop : MonoBehaviour {
 
-public float offset;
-public bool isPlayer = true;
-public Transform player;
-public SnowBurrController burr;
-float distance;
-public int layerMask = 9;
+	public float offset;
+	public bool isPlayer = true;
+	public Transform player;
+	public SnowBurrController burr;
+	float distance;
+	public int layerMask = 9;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +30,9 @@ public int layerMask = 9;
 		else
 			transform.position = new Vector3 (player.position.x, player.position.y - offset - distance, player.position.z);
 		
+		var slopeRotation = Quaternion.FromToRotation (transform.up, hit.normal);
 
+		transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * transform.rotation, 10 * Time.deltaTime);
 	}
 
 }
