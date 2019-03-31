@@ -11,7 +11,7 @@ public class SnowBurrController : MonoBehaviour {
 	public bool faceRight = true;
     public float characterOffset;
     Animator animationSpeed;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
 	private bool hasJumped = false;
 	public Transform groundCheck;
 	public Transform groundCheck2;
