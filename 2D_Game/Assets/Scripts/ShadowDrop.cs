@@ -32,7 +32,7 @@ public class ShadowDrop : MonoBehaviour {
 		
 		var slopeRotation = Quaternion.FromToRotation (transform.up, hit.normal);
 
-		transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * transform.rotation, 10 * Time.deltaTime);
+		transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * transform.rotation, 15 * Time.deltaTime);
 	}
 
 }

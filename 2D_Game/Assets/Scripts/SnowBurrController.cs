@@ -88,7 +88,7 @@ public class SnowBurrController : MonoBehaviour {
         Vector2 movementRight = new Vector2 (moveRight, moveVertical);
         Vector2 movementLeft = new Vector2 (moveLeft, moveVertical);
 
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
+        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move the player.
         if (GetComponent<Rigidbody2D>().velocity.x <= maxSpeed)
         {
             rb2d.AddForce (movementRight * force);
@@ -126,6 +126,7 @@ public class SnowBurrController : MonoBehaviour {
 
     }
 
+    // flips the character sprite
     void FlipCharacter ()
 		{
 			faceRight = !faceRight;
