@@ -127,7 +127,7 @@ public class SnowBurrController : MonoBehaviour {
     }
 
     // flips the character sprite
-    void FlipCharacter ()
+    public void FlipCharacter ()
 		{
 			faceRight = !faceRight;
 			Vector3 theScale = transform.localScale;
@@ -141,5 +141,8 @@ public class SnowBurrController : MonoBehaviour {
 			{
 				transform.position = new Vector2 ((GetComponent<Rigidbody2D>().position.x - characterOffset),GetComponent<Rigidbody2D>().position.y);
 			}
+            else
+                transform.position = new Vector2 ((GetComponent<Rigidbody2D>().position.x - characterOffset),GetComponent<Rigidbody2D>().position.y);
+
 		}
 }

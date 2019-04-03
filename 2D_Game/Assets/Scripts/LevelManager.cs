@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour {
 	
 	private GameObject player;
 
+	private SnowBurrController burr;
+
 	// Particles are fun
 	public GameObject deathParticle;
 	public GameObject respawnParticle;
