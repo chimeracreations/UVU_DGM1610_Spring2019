@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour {
 	
 	// Store gravity value
 	private float gravityStore;
-	private float gravityScale;
+
 
 
 	// Use this for initialization
@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour {
 		player.GetComponent<Renderer>().enabled = false;
 		// Gravity Reset
 		gravityStore = pcRigid.GetComponent<Rigidbody2D>().gravityScale;
-		pcRigid.GetComponent<Rigidbody2D>().gravityScale = 0f;
+		pcRigid.GetComponent<Rigidbody2D>().gravityScale = 1f;
 		pcRigid.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		// Point Penalty
 		ScoreManager.AddPoints(-pointPenaltyOnDeath);
@@ -60,6 +60,7 @@ public class LevelManager : MonoBehaviour {
 		pcRigid.transform.position = currentCheckPoint.transform.position;
 		// Show Player
 		player.SetActive(true);
+		yield return new WaitForSeconds (.02f); // Let's the camera catch up
 		player.GetComponent<Renderer>().enabled = true;
 		// Spawn Player
 		Instantiate (respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
