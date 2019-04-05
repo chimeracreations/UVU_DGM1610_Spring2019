@@ -53,7 +53,7 @@ public class SnowBurrController : MonoBehaviour {
 
 
 		// character jump and double jump code.
-		if((isGrounded || !hasJumped) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+		if((isGrounded || !hasJumped) && (Input.GetButtonDown("Jump")))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 			animationSpeed.SetBool("Ground", false);
