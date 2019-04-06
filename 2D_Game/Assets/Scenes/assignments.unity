@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 625231233}
   - component: {fileID: 625231234}
   m_Layer: 8
-  m_Name: SnowBurr
+  m_Name: SnowBurrGO
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

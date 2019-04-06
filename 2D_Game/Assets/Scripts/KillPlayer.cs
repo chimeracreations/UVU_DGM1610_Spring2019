@@ -14,7 +14,7 @@ public class KillPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.name == "SnowBurr")
+		if(other.name == "SnowBurrGO")
 		{
 			levelManager.RespawnPlayer();
 		}

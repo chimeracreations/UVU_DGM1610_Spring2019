@@ -9,7 +9,7 @@ public class SnowflakePickup : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if(other.name == "SnowBurr")
+		if(other.name == "SnowBurrGO")
 		{
 			ScoreManager.AddPoints(snowValue);
 			ScoreManager.AddPoints(honeyValue);
