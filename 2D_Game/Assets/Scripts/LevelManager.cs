@@ -44,14 +44,14 @@ public class LevelManager : MonoBehaviour {
 		// Generate Death Particle
 		Instantiate (deathParticle, pcRigid.transform.position, pcRigid.transform.rotation);
 		// Hide pcRigid
-		player.SetActive(false);
-		player.GetComponent<Renderer>().enabled = false;
+		//player.SetActive(false);
+		//player.GetComponent<Renderer>().enabled = false;
 		// Gravity Reset
 		gravityStore = pcRigid.GetComponent<Rigidbody2D>().gravityScale;
 		pcRigid.GetComponent<Rigidbody2D>().gravityScale = 1f;
 		pcRigid.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		// Point Penalty
-		ScoreManager.AddPoints(-pointPenaltyOnDeath);
+		//ScoreManager.AddPoints(-pointPenaltyOnDeath);
 		// Debug Message
 		yield return new WaitForSeconds (respawnDelay);
 		// Gravity Restore
@@ -59,9 +59,9 @@ public class LevelManager : MonoBehaviour {
 		// Match players Transform position
 		pcRigid.transform.position = currentCheckPoint.transform.position;
 		// Show Player
-		player.SetActive(true);
+		//player.SetActive(true);
 		yield return new WaitForSeconds (.02f); // Let's the camera catch up
-		player.GetComponent<Renderer>().enabled = true;
+		//player.GetComponent<Renderer>().enabled = true;
 		// Spawn Player
 		Instantiate (respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 	}
