@@ -19,6 +19,10 @@ public class SnowBurrController : MonoBehaviour {
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
     private float speedVelocity;
+    public ParticleSystem poof1;
+    public ParticleSystem poof2;
+    public bool poofCheck;
+
 
 
     private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
@@ -40,13 +44,21 @@ public class SnowBurrController : MonoBehaviour {
         // check to see if on the ground
 		if((Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround)) || (Physics2D.OverlapCircle(groundCheck2.position, groundRadius, whatIsGround)) 
 			|| (Physics2D.OverlapCircle(groundCheck3.position, groundRadius, whatIsGround)))
+            {
 				isGrounded = true;
-		else isGrounded = false;
+            }
+		else 
+            {
+                isGrounded = false;
+                poofCheck = false;
+            }
 
 		animationSpeed.SetBool ("Ground", isGrounded);
 
 		if(isGrounded)
+        {
 			hasJumped = false;
+        }
 
 		// falling animation cues
 		animationSpeed.SetFloat ("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
@@ -145,4 +157,8 @@ public class SnowBurrController : MonoBehaviour {
                 transform.position = new Vector2 ((GetComponent<Rigidbody2D>().position.x - characterOffset),GetComponent<Rigidbody2D>().position.y);
 
 		}
+
+
+
+    
 }
