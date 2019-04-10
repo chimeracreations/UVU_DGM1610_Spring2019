@@ -12106,7 +12106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2D: {fileID: 625231230}
-  rampForce: 750
+  rampForce: 700
 --- !u!68 &1279130109
 EdgeCollider2D:
   m_ObjectHideFlags: 0
