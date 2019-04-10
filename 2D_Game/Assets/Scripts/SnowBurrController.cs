@@ -19,6 +19,7 @@ public class SnowBurrController : MonoBehaviour {
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
     private float speedVelocity;
+    private float moveVelocity;
     public ParticleSystem poof1;
     public ParticleSystem poof2;
     public bool poofCheck;
@@ -111,8 +112,11 @@ public class SnowBurrController : MonoBehaviour {
             rb2d.AddForce (-movementLeft * force);
         }
 
-        speedVelocity = Input.GetAxis ("Horizontal");
-			animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));
+        moveVelocity = Input.GetAxis ("Horizontal");
+		animationSpeed.SetFloat("move", Mathf.Abs(moveVelocity));
+
+        speedVelocity = GetComponent<Rigidbody2D>().velocity.x;
+        animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));
 
     }
 
