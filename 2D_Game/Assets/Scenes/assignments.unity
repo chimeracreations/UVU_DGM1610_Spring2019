@@ -442,7 +442,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck3
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5873,13 +5873,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 625231223}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91a8ec15ed3e9eb448396e87e4dda1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1678115902}
-  projectile: {fileID: 0}
+  projectile: {fileID: 1399902944697676, guid: 2013bd3d53e11ec499a8d50ef175a0f5, type: 2}
 --- !u!1 &662498875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1031905199675570, guid: f371579dcf033ec4b987686e30d7f61c,
@@ -11331,7 +11331,7 @@ GameObject:
   m_Layer: 0
   m_Name: StartCheckpoint
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11359,7 +11359,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck2
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11508,7 +11508,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11812,7 +11812,7 @@ GameObject:
   - component: {fileID: 1234538360}
   m_Layer: 0
   m_Name: Ice Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12244,6 +12244,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031905199675570, guid: f371579dcf033ec4b987686e30d7f61c, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 70797074335279800, guid: f371579dcf033ec4b987686e30d7f61c, type: 2}
@@ -13762,6 +13766,18 @@ Prefab:
       propertyPath: burrController
       value: 
       objectReference: {fileID: 625231231}
+    - target: {fileID: 1606824436628692, guid: 633ac73e7d5d8b6439abe713f0906238, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265537438822530, guid: 633ac73e7d5d8b6439abe713f0906238, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784381081493856, guid: 633ac73e7d5d8b6439abe713f0906238, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 633ac73e7d5d8b6439abe713f0906238, type: 2}
   m_IsPrefabAsset: 0
@@ -13777,7 +13793,7 @@ GameObject:
   - component: {fileID: 1657098079}
   m_Layer: 9
   m_Name: IceBee Shadow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13877,7 +13893,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1678115901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.41, y: 3.36, z: 0}
+  m_LocalPosition: {x: 2.52, y: 4.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625231226}

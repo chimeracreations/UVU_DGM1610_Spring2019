@@ -12,7 +12,7 @@ public class BeeDropShadow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+	
 	}
 	
 	// Update is called once per frame
@@ -29,5 +29,6 @@ public class BeeDropShadow : MonoBehaviour {
 		var slopeRotation = Quaternion.FromToRotation (transform.up, hit.normal);
 
 		transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * transform.rotation, 10 * Time.deltaTime);
+	
 	}
 }

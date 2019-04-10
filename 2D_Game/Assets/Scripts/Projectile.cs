@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
 
 	public float speed;
 	public float timeOut;
+	public SnowBurrController burr;
 	public GameObject player;
 	public GameObject enemyDeath;
 	public GameObject projectileParticle;
@@ -14,11 +15,11 @@ public class Projectile : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		player = GameObject.Find("SnowBurr");
+		player = GameObject.Find("SnowBurrGO");
 
-		enemyDeath = Resources.Load("Prefabs/Death_PS") as GameObject;
+		enemyDeath = Resources.Load("Prefabs/PS") as GameObject;
 
-		projectileParticle = Resources.Load("Prefabs/Respawn_PS") as GameObject;
+		projectileParticle = Resources.Load("Prefabs/PS") as GameObject;
 
 		if(player.transform.localScale.x < 0)
 			speed = -speed;
@@ -39,7 +40,10 @@ public class Projectile : MonoBehaviour {
 		if(other.tag == "Enemy")
 		{
 			Instantiate(enemyDeath, other.transform.position, other.transform.rotation);
+
+
 			Destroy(other.gameObject);
+			Destroy(transform.parent.gameObject);
 			ScoreManager.AddPoints(pointsForKill);
 		}
 		//Instatiate(projectileParticle, transform.position, transform.roation);

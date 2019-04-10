@@ -13,7 +13,8 @@ public class ShadowDrop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if (player.transform == null)
+			Destroy(gameObject);
 	}
 	
 	// Update is called once per frame
@@ -33,6 +34,7 @@ public class ShadowDrop : MonoBehaviour {
 		var slopeRotation = Quaternion.FromToRotation (transform.up, hit.normal);
 
 		transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * transform.rotation, 15 * Time.deltaTime);
+
 	}
 
 }

@@ -28,6 +28,7 @@ public class KillEnemy : MonoBehaviour {
 		{
 			Destroy (enemy);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
 			Destroy (shadow);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
+			Destroy(transform.parent.gameObject);
 			burr.GetComponent<Rigidbody2D>().velocity = new Vector2(burr.GetComponent<Rigidbody2D>().velocity.x, burrController.jumpHeight);
 		}
 	}
