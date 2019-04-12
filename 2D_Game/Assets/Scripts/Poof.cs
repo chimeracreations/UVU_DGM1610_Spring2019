@@ -10,6 +10,7 @@ public class Poof : MonoBehaviour {
 	public Transform poof2t;
 	public Transform player;
 	public SnowBurrController burr;
+	public SnowBar bar;
 	public float offsetX;
 	public float offsetY;
 	float[] startValue = new float[2];
@@ -32,12 +33,23 @@ public class Poof : MonoBehaviour {
     {
         if (col.gameObject.tag == ("Ground") && burr.poofCheck == false)
         {
-			poof1t.position = new Vector3 (player.position.x + offsetX + (ScoreManager.score * sizeIncrement /2), player.position.y + offsetY, player.position.z);
-			poof2t.position = new Vector3 (player.position.x - offsetX - (ScoreManager.score * sizeIncrement /2), player.position.y + offsetY, player.position.z);
 			poof1t.GetComponent<Rigidbody2D>().velocity = new Vector2 (player.GetComponent<Rigidbody2D>().velocity.x / 2, 0);
 			poof2t.GetComponent<Rigidbody2D>().velocity = new Vector2 (player.GetComponent<Rigidbody2D>().velocity.x / 2, 0);
-			poof1t.localScale = new Vector3((startValue[0] + (ScoreManager.score * sizeIncrement)), 1, (startValue[1] + (ScoreManager.score * sizeIncrement)));
-			poof2t.localScale = new Vector3((startValue[0] + (ScoreManager.score * sizeIncrement)), 1, (startValue[1] + (ScoreManager.score * sizeIncrement)));
+			if(bar.snowMax >= ScoreManager.score)
+			{
+				poof1t.position = new Vector3 (player.position.x + offsetX + (ScoreManager.score * sizeIncrement /2), player.position.y + offsetY, player.position.z);
+				poof2t.position = new Vector3 (player.position.x - offsetX - (ScoreManager.score * sizeIncrement /2), player.position.y + offsetY, player.position.z);
+				poof1t.localScale = new Vector3((startValue[0] + (ScoreManager.score * sizeIncrement)), 1, (startValue[1] + (ScoreManager.score * sizeIncrement)));
+				poof2t.localScale = new Vector3((startValue[0] + (ScoreManager.score * sizeIncrement)), 1, (startValue[1] + (ScoreManager.score * sizeIncrement)));
+			}
+			else if(bar.snowMax < ScoreManager.score)
+			{
+				poof1t.position = new Vector3 (player.position.x + offsetX + (bar.snowMax * sizeIncrement /2), player.position.y + offsetY, player.position.z);
+				poof2t.position = new Vector3 (player.position.x - offsetX - (bar.snowMax * sizeIncrement /2), player.position.y + offsetY, player.position.z);
+				poof1t.localScale = new Vector3((startValue[0] + (bar.snowMax * sizeIncrement)), 1, (startValue[1] + (bar.snowMax * sizeIncrement)));
+				poof2t.localScale = new Vector3((startValue[0] + (bar.snowMax * sizeIncrement)), 1, (startValue[1] + (bar.snowMax * sizeIncrement)));
+			}
+			
 			
 
             poof1.Emit(1);

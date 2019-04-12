@@ -34,26 +34,23 @@ public class Projectile : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);	
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// Destroys enemy on contact with projectile and adds points
-		if(other.tag == "Enemy")
-		{
-			Instantiate(enemyDeath, other.transform.position, other.transform.rotation);
-
-
-			Destroy(other.gameObject);
-			Destroy(transform.parent.gameObject);
-			ScoreManager.AddPoints(pointsForKill);
-		}
-		//Instatiate(projectileParticle, transform.position, transform.roation);
-		Destroy(gameObject);
-	}
-	// OnCollision with object in environment
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Instantiate(projectileParticle, transform.position, transform.rotation);
-		Destroy (gameObject);
+		// Destroys enemy on contact with projectile and adds points
+		if(other.gameObject.tag == "Enemy")
+		{
+			Instantiate(enemyDeath, other.transform.position, other.transform.rotation);
+			Destroy(other.transform.parent.gameObject);
+			Destroy(other.gameObject);
+			ScoreManager.AddPoints(pointsForKill);
+		}
+		else	
+		{
+			Instantiate(projectileParticle, transform.position, transform.rotation);
+		}
+		Destroy(gameObject);
 	}
+
+
 	
 }
