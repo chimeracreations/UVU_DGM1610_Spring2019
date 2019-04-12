@@ -6101,6 +6101,7 @@ MonoBehaviour:
   poof1: {fileID: 283145577}
   poof2: {fileID: 813598953}
   poofCheck: 0
+  manage: {fileID: 1977508767}
 --- !u!58 &625231232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6144,7 +6145,7 @@ MonoBehaviour:
   burr: {fileID: 625231226}
   controller: {fileID: 625231231}
   bar: {fileID: 1575369329}
-  increment: 0.02
+  increment: 0.005
 --- !u!114 &625231235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6165,7 +6166,7 @@ MonoBehaviour:
   bar: {fileID: 1575369329}
   offsetX: 0.7
   offsetY: 0.1
-  sizeIncrement: 0.1
+  sizeIncrement: 0.03
 --- !u!114 &625231236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6329,6 +6330,8 @@ MonoBehaviour:
   burr: {fileID: 625231223}
   velocityCheck: 0.1
   burrController: {fileID: 625231231}
+  pointsForKill: 5
+  manage: {fileID: 1977508767}
 --- !u!50 &686788419
 Rigidbody2D:
   serializedVersion: 4
@@ -6587,7 +6590,7 @@ MonoBehaviour:
   burr: {fileID: 776458197}
   controller: {fileID: 625231231}
   bar: {fileID: 1575369329}
-  increment: 0.03
+  increment: 0.01
 --- !u!212 &776458199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12992,6 +12995,16 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 114791944251325276, guid: f371579dcf033ec4b987686e30d7f61c,
+        type: 2}
+      propertyPath: pointsForKill
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114791944251325276, guid: f371579dcf033ec4b987686e30d7f61c,
+        type: 2}
+      propertyPath: manage
+      value: 
+      objectReference: {fileID: 1977508767}
     m_RemovedComponents:
     - {fileID: 70797074335279800, guid: f371579dcf033ec4b987686e30d7f61c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f371579dcf033ec4b987686e30d7f61c, type: 2}
@@ -13692,7 +13705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowBar: {fileID: 1575369328}
-  snowMax: 10
+  snowMax: 100
 --- !u!212 &1575369330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15237,6 +15250,7 @@ MonoBehaviour:
     type: 2}
   respawnDelay: 1
   pointPenaltyOnDeath: 5
+  enemyMultiplier: 0
 --- !u!4 &1977508768
 Transform:
   m_ObjectHideFlags: 0

@@ -25,6 +25,9 @@ public class LevelManager : MonoBehaviour {
 	// Store gravity value
 	private float gravityStore;
 
+	// store enemy kill multiplier
+	public int enemyMultiplier = 1;
+
 
 
 	// Use this for initialization

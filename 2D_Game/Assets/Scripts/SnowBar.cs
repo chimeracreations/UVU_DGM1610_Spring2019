@@ -28,7 +28,7 @@ public class SnowBar : MonoBehaviour
 			snowBar.transform.localScale = new Vector3((startLocal * (fraction * ScoreManager.score)), snowBar.transform.localScale.y, 1);
 		}
 
-		if (ScoreManager.score >= 10)
+		if (ScoreManager.score >= snowMax)
 			snowBar.transform.localScale = new Vector3(startLocal, snowBar.transform.localScale.y, 1);
 	}
 }

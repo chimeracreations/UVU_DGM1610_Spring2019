@@ -10,6 +10,8 @@ public class KillEnemy : MonoBehaviour {
 	public GameObject burr;
 	public float velocityCheck = .5f;
 	public SnowBurrController burrController;
+	public int pointsForKill;
+	public LevelManager manage;
  
     // Use this for initialization
     void Start () 
@@ -30,6 +32,9 @@ public class KillEnemy : MonoBehaviour {
 			Destroy (shadow);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
 			Destroy(transform.parent.gameObject);
 			burr.GetComponent<Rigidbody2D>().velocity = new Vector2(burr.GetComponent<Rigidbody2D>().velocity.x, burrController.jumpHeight);
+			if(burrController.isGrounded == false)
+				manage.enemyMultiplier++;
+			ScoreManager.AddPoints(pointsForKill * manage.enemyMultiplier);
 		}
 	}
 }

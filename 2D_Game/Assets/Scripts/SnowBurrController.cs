@@ -23,6 +23,7 @@ public class SnowBurrController : MonoBehaviour {
     public ParticleSystem poof1;
     public ParticleSystem poof2;
     public bool poofCheck;
+    public LevelManager manage;
 
 
 
@@ -59,6 +60,7 @@ public class SnowBurrController : MonoBehaviour {
 		if(isGrounded)
         {
 			hasJumped = false;
+            manage.enemyMultiplier = 0;
         }
 
 		// falling animation cues
