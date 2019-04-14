@@ -73,7 +73,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1265537438822530
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 114569064345941468}
   m_Layer: 9
   m_Name: Badger Shadow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 4948327073614826}
   m_Layer: 0
   m_Name: Snow Badger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,11 +520,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265537438822530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.42, y: -3.23, z: 0.0317241}
-  m_LocalScale: {x: 0.45475686, y: 0.2316732, z: 1}
+  m_LocalPosition: {x: -0.95593125, y: -1.2055285, z: 0}
+  m_LocalScale: {x: 1.515856, y: 0.7722439, z: 1}
   m_Children: []
-  m_Father: {fileID: 4948327073614826}
-  m_RootOrder: 1
+  m_Father: {fileID: 4840113772169092}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4442367701916880
 Transform:
@@ -621,12 +621,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784381081493856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.70678, y: -2.8683412, z: 0.0317241}
+  m_LocalPosition: {x: 2.42, y: -1.7, z: 0.0317241}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4286934008927116}
   - {fileID: 4735696399370336}
   - {fileID: 4593889825806022}
+  - {fileID: 4385540584750554}
   m_Father: {fileID: 4948327073614826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -651,11 +652,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606824436628692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.587296, y: 1.1633413, z: -0.04088807}
+  m_LocalPosition: {x: 94.43611, y: -12.479666, z: -0.04088807}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4840113772169092}
-  - {fileID: 4385540584750554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -791,6 +791,8 @@ MonoBehaviour:
   burr: {fileID: 0}
   velocityCheck: 0.1
   burrController: {fileID: 0}
+  pointsForKill: 5
+  manage: {fileID: 0}
 --- !u!114 &114848408318372766
 MonoBehaviour:
   m_ObjectHideFlags: 1
