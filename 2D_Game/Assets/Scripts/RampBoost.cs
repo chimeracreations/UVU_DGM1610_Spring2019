@@ -6,6 +6,7 @@ public class RampBoost : MonoBehaviour {
 
 	public Rigidbody2D rb2D;
 	public float rampForce;
+	public SnowBurrController burr;
 
 	Vector2 boost;
 
@@ -23,7 +24,7 @@ public class RampBoost : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{	
-		if (col.gameObject.tag == ("Player"))
+		if (col.gameObject.tag == ("Player") && burr.faceRight == true)
 			rb2D.AddForce(boost);
 	}	
 

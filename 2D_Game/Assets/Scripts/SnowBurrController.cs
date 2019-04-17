@@ -1,10 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SnowBurrController : MonoBehaviour {
 
-    public float force;             //Floating point variable to store the player's movement speed.
+    // This code uses force to give a harder time to correct movement, to opposite of non sliding. 
+    // Floating point variable to store the player's movement speed.
+    public float force;        
     public float maxSpeed;
     public float acceleration;
     public float jumpHeight;
@@ -24,10 +26,8 @@ public class SnowBurrController : MonoBehaviour {
     public ParticleSystem poof2;
     public bool poofCheck;
     public LevelManager manage;
-
-
-
-    private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
+    // Store a reference to the Rigidbody2D component required to use 2D Physics.
+    private Rigidbody2D rb2d;       
 
     // Use this for initialization
     void Start()
@@ -114,12 +114,6 @@ public class SnowBurrController : MonoBehaviour {
             rb2d.AddForce (-movementLeft * force);
         }
 
-        moveVelocity = Input.GetAxis ("Horizontal");
-		animationSpeed.SetFloat("move", Mathf.Abs(moveVelocity));
-
-        speedVelocity = GetComponent<Rigidbody2D>().velocity.x;
-        animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));
-
     }
 
     void Update ()
@@ -141,6 +135,14 @@ public class SnowBurrController : MonoBehaviour {
 				FlipCharacter ();
 			}
         }
+
+        //Animation calls for move and speed
+        moveVelocity = Input.GetAxis ("Horizontal");
+		animationSpeed.SetFloat("move", Mathf.Abs(moveVelocity));
+
+        speedVelocity = GetComponent<Rigidbody2D>().velocity.x;
+        animationSpeed.SetFloat("speed", Mathf.Abs(speedVelocity));
+
 
     }
 
