@@ -20,15 +20,18 @@ public class LevelTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (burr.faceRight == true)
+		if (col.gameObject.tag == "Player")
 		{
-			nextLevel.SetActive(true);
-			lastLevel.SetActive(false);
-		}
-		if (burr.faceRight == false)
-		{
-			nextLevel.SetActive(false);
-			lastLevel.SetActive(true);
+			if (burr.faceRight == true)
+			{
+				nextLevel.SetActive(true);
+				lastLevel.SetActive(false);
+			}
+			if (burr.faceRight == false)
+			{
+				nextLevel.SetActive(false);
+				lastLevel.SetActive(true);
+			}
 		}
 	}
 }

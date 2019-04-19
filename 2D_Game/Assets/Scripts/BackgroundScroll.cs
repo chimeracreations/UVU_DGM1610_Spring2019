@@ -30,8 +30,10 @@ public class BackgroundScroll : MonoBehaviour {
 	
 	void FixedUpdate ()
 	{
-		for(int i = 0; i < transform.childCount; i++)
-			layers[i].position = new Vector3 (layers[i].transform.position.x, cam.position.y + offset, 0);
+		layers[0].position = new Vector3 (layers[0].transform.position.x, cam.position.y + offset, 0);
+		layers[1].position = new Vector3 (layers[1].transform.position.x, cam.position.y + offset, 0);
+		layers[2].position = new Vector3 (layers[2].transform.position.x, cam.position.y + offset, 0);
+		
 		
 		float changeX = cam.position.x - lastCamX;
 		transform.position += Vector3.right * (changeX * paralaxSpeed);
@@ -52,7 +54,7 @@ public class BackgroundScroll : MonoBehaviour {
 
 	private void ScrollLeft()
 	{
-		int lastRight = rightIndex;
+		//int lastRight = rightIndex;
 		layers[rightIndex].position = new Vector3 (layers[leftIndex].position.x - backgroundSize, cam.position.y + offset, 0);
 		leftIndex = rightIndex;
 		rightIndex--;
@@ -62,7 +64,7 @@ public class BackgroundScroll : MonoBehaviour {
 
 	private void ScrollRight()
 	{
-		int lastLeft = leftIndex;
+		//int lastLeft = leftIndex;
 		layers[leftIndex].position = new Vector3 (layers[leftIndex].position.x + backgroundSize, cam.position.y + offset, 0);
 		rightIndex = leftIndex;
 		leftIndex++;
