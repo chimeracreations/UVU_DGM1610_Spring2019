@@ -13,6 +13,7 @@ public class BackgroundScroll : MonoBehaviour {
 	public float paralaxSpeed;
 	private float lastCamX;
 	public float offset;
+	public bool autoScrolling = false;
 
 
 	// Use this for initialization
@@ -44,6 +45,9 @@ public class BackgroundScroll : MonoBehaviour {
 			ScrollLeft();
 		if(cam.position.x > (layers[rightIndex].transform.position.x - viewArea))
 			ScrollRight();
+		
+		if(autoScrolling)
+			lastCamX += 0.03f;
 	}
 
 	// Update is called once per frame
