@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class EndGame : MonoBehaviour {
 
 	public Timer levelTime;
+	public GameObject finished;
+	public GameObject burr;
+	public float timeToStop;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +20,18 @@ public class EndGame : MonoBehaviour {
 	{
 		if (levelTime.timer == 0.00f)
 		{
-			SceneManager.LoadScene(0);
+			finished.SetActive(true);
+			burr.GetComponent<Rigidbody2D>().isKinematic = true;
+			burr.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+			StartCoroutine(StopTime(timeToStop));
 		}
+	}
+
+	IEnumerator StopTime(float time)
+ 	{
+   		yield return new WaitForSeconds(time);
+		burr.GetComponent<Rigidbody2D>().isKinematic = false;
+		finished.SetActive(false);
+		SceneManager.LoadScene(0);
 	}
 }

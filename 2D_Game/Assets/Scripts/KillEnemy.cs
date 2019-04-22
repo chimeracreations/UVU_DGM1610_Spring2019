@@ -37,17 +37,17 @@ public class KillEnemy : MonoBehaviour {
 			burr.GetComponent<Rigidbody2D>().velocity = new Vector2(burr.GetComponent<Rigidbody2D>().velocity.x, burrController.jumpHeight);
 			if(burrController.isGrounded == false)
 				manage.enemyMultiplier++;
-			ScoreManager.AddPoints(pointsForKill * manage.enemyMultiplier);
+			ScoreManager.AddPoints(pointsForKill * manage.enemyMultiplier * manage.enemyMultiplier);
 		}
 	}
 
 	IEnumerator DeathAfterTime(float time)
- {
-    yield return new WaitForSeconds(time);
-	Destroy (enemy);
-	Destroy (shadow);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
-	Destroy(transform.parent.gameObject);
- }
+ 	{
+    	yield return new WaitForSeconds(time);
+		Destroy (enemy);
+		Destroy (shadow);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
+		Destroy(transform.parent.gameObject);
+ 	}
 }
 
 
