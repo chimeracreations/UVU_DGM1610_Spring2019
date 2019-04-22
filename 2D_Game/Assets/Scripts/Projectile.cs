@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour {
 
 		enemyDeath = Resources.Load("Prefabs/PS") as GameObject;
 
-		projectileParticle = Resources.Load("Prefabs/PS") as GameObject;
+		projectileParticle = Resources.Load("Prefabs/drops") as GameObject;
 
 		if(player.transform.localScale.x < 0)
 			speed = -speed;
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);	
+		GetComponent<Rigidbody2D>().velocity = new Vector2(speed + player.GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);	
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

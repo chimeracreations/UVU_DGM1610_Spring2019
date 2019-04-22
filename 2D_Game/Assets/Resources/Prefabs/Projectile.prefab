@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1399902944697676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.763, y: 2.1627035, z: 0.031639118}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.24, y: 0.24, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyDeath: {fileID: 0}
   projectileParticle: {fileID: 0}
-  pointsForKill: 10
+  pointsForKill: 25
 --- !u!212 &212586188559479264
 SpriteRenderer:
   m_ObjectHideFlags: 1

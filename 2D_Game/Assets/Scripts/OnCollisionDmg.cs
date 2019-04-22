@@ -5,10 +5,9 @@ using UnityEngine;
 public class OnCollisionDmg : MonoBehaviour {
 
 	public SnowBurrController burr;
-
 	public float pushBack = 2f;
-
 	public float pushUp = 2f;
+	public ParticleSystem burst;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +23,8 @@ public class OnCollisionDmg : MonoBehaviour {
 	{
 		if (col.gameObject.tag == ("Enemy"))
 		{
+			burst.Emit(4);
+
 			ScoreManager.score /= 2;
 
 			if (burr.faceRight == true)

@@ -45,7 +45,7 @@ public class KillEnemy : MonoBehaviour {
  	{
     	yield return new WaitForSeconds(time);
 		Destroy (enemy);
-		Destroy (shadow);//, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay); 
+		Destroy (shadow);
 		Destroy(transform.parent.gameObject);
  	}
 }
