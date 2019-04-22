@@ -9,6 +9,7 @@ TagManager:
   - Boot
   - Poof
   - Ground
+  - cloud
   layers:
   - Default
   - TransparentFX
