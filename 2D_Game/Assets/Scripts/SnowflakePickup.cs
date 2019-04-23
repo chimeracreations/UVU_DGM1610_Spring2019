@@ -5,14 +5,23 @@ using UnityEngine;
 public class SnowflakePickup : MonoBehaviour {
 
 	public int snowValue;
-	public int honeyValue;
+	public LevelManager manager;
+	public GameObject levelManager;
+	public bool isHoney;
+
+	void Start ()
+	{
+		levelManager = GameObject.Find("Level Manager");
+		manager = levelManager.GetComponent<LevelManager>();
+	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.name == "SnowBurrGO")
 		{
 			ScoreManager.AddPoints(snowValue);
-			ScoreManager.AddPoints(honeyValue);
+			if (isHoney)
+				manager.hasHoney = true;
 			Destroy(gameObject);
 		}
 	}

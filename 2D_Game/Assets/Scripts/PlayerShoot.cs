@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour {
 
 	public Transform firePoint;
 	public GameObject projectile;
+	public LevelManager manager;
 
 	// Use this for initialization
 	void Start () 
@@ -17,7 +18,10 @@ public class PlayerShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.E))
-			Instantiate(projectile, firePoint.position, firePoint.rotation);	
+		if(Input.GetKeyDown(KeyCode.E) && manager.hasHoney)
+		{
+			Instantiate(projectile, firePoint.position, firePoint.rotation);
+			manager.hasHoney = false;
+		}
 	}
 }

@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour {
 
 	// store enemy kill multiplier
 	public int enemyMultiplier = 1;
+	public bool hasHoney;
+	public GameObject honey;
 
 
 
@@ -35,6 +37,15 @@ public class LevelManager : MonoBehaviour {
 	{
 		pcRigid = GameObject.Find("SnowBurrGO").GetComponent<Rigidbody2D>();
 		player = GameObject.Find("SnowBurrGO");
+	}
+
+	void Update ()
+	{
+		if (hasHoney)
+			honey.SetActive(true);
+		if (!hasHoney)
+			honey.SetActive(false);
+
 	}
 	
 	public void RespawnPlayer()

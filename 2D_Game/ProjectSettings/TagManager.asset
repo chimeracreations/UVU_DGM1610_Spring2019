@@ -10,6 +10,7 @@ TagManager:
   - Poof
   - Ground
   - cloud
+  - Honey
   layers:
   - Default
   - TransparentFX

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 68366887411544136}
   m_Layer: 0
   m_Name: IceHoney
-  m_TagString: Untagged
+  m_TagString: Honey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowValue: 5
-  honeyValue: 1
+  manager: {fileID: 0}
+  levelManager: {fileID: 0}
+  isHoney: 1
 --- !u!198 &198693436453497374
 ParticleSystem:
   m_ObjectHideFlags: 1
