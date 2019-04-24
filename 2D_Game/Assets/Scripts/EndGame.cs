@@ -29,6 +29,9 @@ public class EndGame : MonoBehaviour {
 
 	IEnumerator StopTime(float time)
  	{
+		PlayerPrefs.SetInt("score", ScoreManager.score);
+		if (PlayerPrefs.GetInt("highscore") <= ScoreManager.score)
+				PlayerPrefs.SetInt("highscore", ScoreManager.score);
    		yield return new WaitForSeconds(time);
 		burr.GetComponent<Rigidbody2D>().isKinematic = false;
 		finished.SetActive(false);
