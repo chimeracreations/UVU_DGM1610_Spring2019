@@ -21,7 +21,7 @@ public class SnowflakePickup : MonoBehaviour {
 		{
 			ScoreManager.AddPoints(snowValue);
 			if (isHoney)
-				manager.hasHoney = true;
+				manager.honeyNo++;
 			Destroy(gameObject);
 		}
 	}

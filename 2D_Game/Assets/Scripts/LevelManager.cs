@@ -27,8 +27,10 @@ public class LevelManager : MonoBehaviour {
 
 	// store enemy kill multiplier
 	public int enemyMultiplier = 1;
-	public bool hasHoney;
-	public GameObject honey;
+	public int honeyNo;
+	public GameObject honey1;
+	public GameObject honey2;
+	public GameObject honey3;
 
 
 
@@ -41,10 +43,33 @@ public class LevelManager : MonoBehaviour {
 
 	void Update ()
 	{
-		if (hasHoney)
-			honey.SetActive(true);
-		if (!hasHoney)
-			honey.SetActive(false);
+		if (honeyNo > 3)
+			honeyNo = 3;
+			
+		if (honeyNo == 3)
+		{
+			honey3.SetActive(true);
+			honey2.SetActive(true);
+			honey1.SetActive(true);
+		}
+		if (honeyNo == 2)
+		{
+			honey3.SetActive(false);
+			honey2.SetActive(true);
+			honey1.SetActive(true);
+		}
+		if (honeyNo == 1)
+		{
+			honey3.SetActive(false);
+			honey2.SetActive(false);
+			honey1.SetActive(true);
+		}
+		if (honeyNo == 0)
+		{
+			honey3.SetActive(false);
+			honey2.SetActive(false);
+			honey1.SetActive(false);
+		}
 
 	}
 	

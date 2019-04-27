@@ -118,7 +118,7 @@ public class SnowBurrController : MonoBehaviour {
 
     void Update ()
     {
-        if (GetComponent<Rigidbody2D>().velocity.x > 0.25)
+        if (GetComponent<Rigidbody2D>().velocity.x > 0)
         {
 			if(faceRight == true);
 			else
@@ -127,7 +127,7 @@ public class SnowBurrController : MonoBehaviour {
 			}
         }
         
-        if (GetComponent<Rigidbody2D>().velocity.x < -0.25)
+        if (GetComponent<Rigidbody2D>().velocity.x < -0)
         {
 			if(faceRight == false);
 			else
